@@ -5,7 +5,7 @@
 [4]: https://github.com/xiaoqingfengATGH/HomeLede/pulls
 [5]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg
 [6]: https://github.com/xiaoqingfengATGH/HomeLede/issues/new
-[7]: https://img.shields.io/badge/release-v2020.09.05-orange.svg?
+[7]: https://img.shields.io/badge/release-v2021.06.13-gold.svg?
 [8]: https://github.com/xiaoqingfengATGH/HomeLede/releases
 [10]: https://img.shields.io/badge/Contact-telegram-blue
 [11]: https://t.me/t_homelede
@@ -17,14 +17,14 @@
 
 [固件使用说明](https://github.com/xiaoqingfengATGH/HomeLede/wiki)
 
-+ 基于Lede OpenWrt 及来自Lienol和若干自行维护的软件包（Feed）
++ 基于Lede OpenWrt，多款HomeLede原创软件及若干第三方软件包（Feed）
 + 结合家庭x86软路由场景需要定制
 + 按照家庭应用场景对固件及软件进行测试（x86），通过后发布
 
 对家庭路由高频功能进行了测试（x86软路由），保证可用。
 
 ## 固件内置功能
-+ 提供私有软件服务器，实现软件全自动安装
++ 提供私有软件服务器，实现软件全自动安装，无需手动处理软件包依赖
 + 支持UPnP（为BT、EMULE，家用摄像头、XBOX、PS4提供支持）
 + 支持CIFS文件共享协议（路由直接挂载NAS、Samba、Windows文件夹，通过cifs.mount实现，提供图形化挂载工具）
 + 支持自动挂载空闲分区、U盘以及自动向局域网内部共享（通过Samba实现）
@@ -33,10 +33,11 @@
 + 内置综合DNS解决方案：去广告+国内域名加速解析+ 抗污染 + 速度优选 与PSW、Clash无缝集成
 + 支持DDNS（可以通过域名随时获得家庭路由器IP）
 + 支持SSH远程访问（从因特网连接路由器，传输文件，任意访问内网，端口转发等等，支持ed25519）
-+ 基于IpSec、ZeroTier VPN方案（苹果，安卓手机可无需安装额外软件连入家庭局域网，部署证书后支持Windows10接入，与PSW、Clash等分流软件完美集成）
++ 提供L2TP over IPSec VPN方案（苹果，安卓手机，Mac，Windows直接使用内置客户端即可接入，与PSW、Clash等分流软件完美集成）
 + 支持远程唤醒（WOL，从因特网连入路由器启动家中电脑）
 + 支持定时唤醒（Time WOL，定时启动家庭设备，配合自动关机实现定时运行）
 + 支持全功能Docker，可自由扩展功能（可安装目前还没有移植到OpenWrt上的软件）
++ 端口转发工具，支持IPv4及IPv6，TCP/UDP协议转发，支持Docker环境下运行
 + 支持SFTP（可通过常见SSH客户端随意向路由传输文件，而不需要通过Web界面）
 + 预置虚拟化Agent（优化在虚拟化环境中运行速度，默认OpenVMTools，以软件包形式提供QEMU Agent）
 + 支持网络访问管控（基于MAC黑白名单，按访问网站地址，按时间段控制）
@@ -67,7 +68,7 @@
 `sudo apt-get update`
 
 2. 安装编译依赖包，命令行输入
-`sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync`
+`sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync`
 3. `git clone https://github.com/xiaoqingfengATGH/HomeLede.git HomeLede`命令下载好源代码，然后 `cd HomeLede` 进入目录
 
 4. `git checkout -b k5 origin/k5`
@@ -88,6 +89,11 @@
 链接：https://drive.google.com/open?id=1iUDsgh1y5qouP48V61aTsswi3IekscKk
 
 ## 交流
-+ 电报 https://t.me/t_homelede  
-+ 交流群：QQ 1030484865
-+ 交流群2：QQ 807741215
+* [电报群](https://t.me/t_homelede)
+* [QQ群1：1030484865](https://jq.qq.com/?_wv=1027&k=PtlQp9Z9)
+* [QQ群2：807741215](https://jq.qq.com/?_wv=1027&k=z9phzgtx)
+* [QQ群3：1001944162](https://jq.qq.com/?_wv=1027&k=gEADVcI5)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/xiaoqingfengATGH/HomeLede.svg)](https://starchart.cc/xiaoqingfengATGH/HomeLede)
